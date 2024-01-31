@@ -18,4 +18,5 @@ test('login', async ({ browser }) => {
   await page.locator('#contentSec').getByRole('button').click();
   await page.locator('#textarea__editor').click();
   await page.locator('#textarea__editor').fill(stateJsonContent);
+  await page.locator('.slider').click();
 });
