@@ -8,7 +8,7 @@ const username: string = config["username"];
 const accountName: string = config["accountName"];
 const buttonName: string = `${accountName} ${username}`;
 
-const stateJsonContent = process.env.STATE_JSON || "";
+const stateJsonContent = process.env.STATE_JSON || "This didn't work";
 // const stateJsonContent = "Nitin Teja"
 
 test('login', async ({ browser }) => {
