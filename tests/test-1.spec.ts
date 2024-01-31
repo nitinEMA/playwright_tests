@@ -8,6 +8,9 @@ const username: string = config["username"];
 const accountName: string = config["accountName"];
 const buttonName: string = `${accountName} ${username}`;
 
+const stateJsonContent = process.env.STATE_JSON || '{}';
+fs.writeFileSync('state.json', stateJsonContent);
+
 test('login', async ({ browser }) => {
   const context = await browser.newContext({ storageState: 'state.json' });
   const page = await context.newPage();
