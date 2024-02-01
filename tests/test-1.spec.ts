@@ -8,15 +8,20 @@ const username: string = config["username"];
 const accountName: string = config["accountName"];
 const buttonName: string = `${accountName} ${username}`;
 
-const stateJsonContent = process.env.STATE_JSON || "This didn't work";
-// const stateJsonContent = "Nitin Teja"
-
 test('login', async ({ browser }) => {
   const context = await browser.newContext({ storageState: 'state.json' });
   const page = await context.newPage();
-  await page.goto('https://www.editpad.org/');
-  await page.locator('#contentSec').getByRole('button').click();
-  await page.locator('#textarea__editor').click();
-  await page.locator('#textarea__editor').fill(stateJsonContent);
-  await page.locator('.slider').click();
+  await page.goto('https://dev.ema.co/');
+  await page.waitForLoadState('networkidle'); 
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.waitForTimeout(5000);
+  await page.getByRole('button', { name: 'Auth Continue with Google' }).click();
+  await page.waitForTimeout(8000);
+  await page.getByRole('link', { name: buttonName }).click();
+  await page.waitForTimeout(5000);
+  await page.getByRole('button', { name: 'Continue' }).click();
+  await page.waitForTimeout(5000);
+  await page.getByRole('button', { name: '+ New Chat' }).click();
+  await page.waitForTimeout(5000);
+  await page.waitForLoadState('networkidle');
 });
