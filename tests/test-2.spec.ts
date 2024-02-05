@@ -24,8 +24,4 @@ test('test2', async ({ browser }) => {
   // await page.getByRole('button', { name: '+ New Chat' }).click();
   // await page.waitForTimeout(5000);
   // await page.waitForLoadState('networkidle');
-
-  const fileName = 'playwright-results/test-1-response.txt';
-  const fileContent = 'this is a test';
-  fs.writeFileSync(fileName, fileContent, 'utf-8');
 });

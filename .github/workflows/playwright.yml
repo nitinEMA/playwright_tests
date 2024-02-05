@@ -17,6 +17,8 @@ jobs:
       run: ./decrypt_secret.sh
       env:
         LARGE_SECRET_PASSPHRASE: ${{ secrets.LARGE_SECRET_PASSPHRASE }}
+    - name: Decrypt large secret
+      run: ./decrypt_secret.sh  
     - name: Install dependencies
       run: npm ci
     - name: Install Playwright Browsers
