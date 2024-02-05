@@ -8,7 +8,7 @@ const username: string = config["username"];
 const accountName: string = config["accountName"];
 const buttonName: string = `${accountName} ${username}`;
 
-test('test1', async ({ browser }) => {
+test('test2', async ({ browser }) => {
   // const context = await browser.newContext({ storageState: 'state.json' });
   // const page = await context.newPage();
   // await page.goto('https://dev.ema.co/');
